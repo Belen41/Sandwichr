@@ -1,0 +1,20 @@
+<h1>Sandwich Details Page</h1>
+<h2><%=@sandwich.name%></h2>
+<ul>
+  <li>Bread Type: &nbsp; <%= @sandwich.bread_type%></li>
+  <li>Total Calories: &nbsp;<%=@total_calories%></li>
+</ul>
+<h4>Sandwich Ingredients:</h4>
+<ul>
+  <%@sandwich.ingredients.each do |ingredient|%>
+  <li><%=ingredient.name%></li>
+  <%end%>
+</ul>
+
+<h4>List of available ingredients. Add yours</h4>
+<ul>
+  <%@ingredients.each do |ingredient|%>
+  <li><button type="button" class=" btn btn-primary js-ingredient-id"><%=ingredient.name%></li></button>
+  <br>
+  <%end%>
+</ul>
