@@ -5,6 +5,8 @@ class SandwichViewsController < ApplicationController
   def show
     @sandwich = Sandwich.find(params[:id])
     @ingredients = Ingredient.all
-    @total_calories=@sandwich.ingredients.sum{|i| i.calories}
+    @total_calories=@sandwich.ingredients.reduce(0) do |sum,ingredient|
+      sum+ingredient.calories
+    end
   end
 end

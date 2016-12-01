@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :sandwiches, only: [:index, :show], controller: "sandwich_views"
-  scope "/api" do
+  scope "/api/v1" do
    resources :sandwiches
    resources :ingredients
    post "/sandwiches/:id/ingredients/add" => "sandwiches#add_ingredient"
